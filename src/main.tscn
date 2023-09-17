@@ -1,8 +1,83 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5nbrekqelxtr"]
+[gd_scene load_steps=3 format=3 uid="uid://c5nbrekqelxtr"]
 
 [ext_resource type="Script" path="res://game_manager.gd" id="1_2t0jk"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ruq5q"]
 
 [node name="Main" type="Node2D"]
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("1_2t0jk")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DialogueBox" type="Panel" parent="CanvasLayer"]
+offset_left = 256.0
+offset_top = 200.0
+offset_right = 896.0
+offset_bottom = 448.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="DialogueText" type="RichTextLabel" parent="CanvasLayer/DialogueBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 184.0
+offset_top = 32.0
+offset_right = -24.0
+offset_bottom = -32.0
+text = "Here is where the NPC's dialogue will go when they are talking to the player. Here is where the NPC's dialogue will go when they are talking to the player."
+
+[node name="NPCIcon" type="TextureRect" parent="CanvasLayer/DialogueBox"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 160.0
+offset_bottom = 152.0
+texture = SubResource("PlaceholderTexture2D_ruq5q")
+
+[node name="PlayerTalkInput" type="TextEdit" parent="CanvasLayer/DialogueBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.742
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -0.0160065
+offset_right = -200.0
+offset_bottom = -24.0
+placeholder_text = "Talk to the NPC..."
+
+[node name="TalkButton" type="Button" parent="CanvasLayer/DialogueBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.687
+anchor_top = 0.742
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.32
+offset_top = -0.0160065
+offset_right = -112.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Talk"
+
+[node name="LeaveButton" type="Button" parent="CanvasLayer/DialogueBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.687
+anchor_top = 0.742
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 104.32
+offset_top = -0.0160065
+offset_right = -24.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Leave"
