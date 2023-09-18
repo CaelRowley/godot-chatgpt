@@ -11,6 +11,7 @@ extends Panel
 
 func _ready():
 	pass # Replace with function body.
+
 	
 func init_with_npc(npc):
 	dialogue_text.text = ""
